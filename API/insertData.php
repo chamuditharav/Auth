@@ -5,7 +5,8 @@ require_once './dbconfig.php';
     if(isset($_POST['addImages']))
     {
         $userID = $_POST['userID'];
-        $imgdata = $_POST['imageData']; 
+        $imgdata = $_POST['imageData'];
+        $imgdata = str_replace(' ','+',$imgdata);
 
         // print($imgData);
 
