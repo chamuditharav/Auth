@@ -26,7 +26,9 @@ require_once './dbconfig.php';
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-              echo "id: " . $row["id"]. " - uid: " . $row["uid"]. " " . $row["img_data"]. "<br>";
+              $base64Data = $row["img_data"];
+              $base64Data = str_replace('base64_decode','',$base64Data);
+              echo $base64Data. "<br>";
             }
           } else {
             echo "0 results";
